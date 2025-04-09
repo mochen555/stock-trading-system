@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock {{ stock_id }} Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='view_stock_styles.css') }}">
+    <style>
+        table,tbody {
+            display: block;
+            height: 180px;
+            border: 0;
+            border-spacing: 0;
+            border-collapse: collapse;
+            cursor: default;
+        }
+
+        tbody {
+            overflow-y: scroll;
+        }
+
+        table thead,
+        tbody tr {
+            display: table;
+            width: 100%;
+            table-layout: fixed;
+        }
+
+        table thead {
+            width: calc(100% - 1em)
+        }
+
+        table thead th {
+            background: #84acde;
+            width: 20%;
+        }
+
+        table tbody td {
+            width: 20%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>订单id</th>
+                    <th>订单种类</th>
+                    <th>订单状态</th>
+                    <th>数量</th>
+                    <th>交易价格</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for order in orders %}
+                <tr>
+                    <td>{{ order.order_id }}</td>
+                    <td>{{ order.order_type }}</td>
+                    <td>{{ order.order_status }}</td>
+                    <td>{{ order.transaction_quantity }}</td>
+                    <td>{{ order.transaction_price }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+        <a href="{{ url_for('mainPage') }}">点击此处返回主界面</a>
+    </div>
+</body>
+</html>
