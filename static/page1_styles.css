@@ -1,0 +1,120 @@
+:root {
+    --primary-color: #1e90ff;
+    --primary-hover-color: #1c86ee;
+    --background-color: #eef2f3;
+    --text-color: #333;
+    --button-color: #1e90ff;
+    --button-hover-color: #1c86ee;
+    --button-text-color: #fff;
+    --logout-button-color: #f44336;
+    --logout-button-hover-color: #da190b;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 400px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+p {
+    margin-bottom: 30px;
+    color: var(--text-color);
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.button-container {
+    display: flex;
+    width:100%;
+    height:100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.button {
+    display: inline-block;
+    padding: 15px 25px;
+    background-color: var(--button-color);
+    color: var(--button-text-color);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: var(--button-hover-color);
+}
+
+.logout-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--logout-button-color);
+    color: var(--button-text-color);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+    background-color: var(--logout-button-hover-color);
+}
+
+.flashes {
+    margin-top: 20px;
+    padding: 0;
+    list-style-type: none;
+}
+
+.flashes li {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.flashes .success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.flashes .danger {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
