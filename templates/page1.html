@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>添加订单</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='page1_styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>添加订单</h2>
+        <form method="POST">
+            <div class="form-group">
+                <label for="stock_type">股票类型:</label>
+                <select id="stock_type" name="stock_type" required>
+                    <option value="0">恒大集团</option>
+                    <option value="1">山西焦煤</option>
+                    <option value="2">万达电影</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="buy_sell">选择买/卖:</label>
+                <select id="buy_sell" name="buy_sell" required>
+                    <option value="买">买</option>
+                    <option value="卖">卖</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="stock_price">您的出价:</label>
+                <input type="text" id="stock_price" name="stock_price" required>
+            </div>
+            <div class="form-group">
+                <label for="stock_quantity">您的买入/卖出数量:</label>
+                <input type="text" id="stock_quantity" name="stock_quantity" required>
+            </div>
+            <button type="submit" class="button">提交</button>
+        </form>
+        <a href="{{ url_for('mainPage') }}">点此返回到主页面</a>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            <ul class="flashes">
+            {% for category, message in messages %}
+              <li class="{{ category }}">{{ message }}</li>
+            {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+    </div>
+</body>
+</html>

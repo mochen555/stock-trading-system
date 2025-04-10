@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 1</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='page1_styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>删除订单</h2>
+        <form method="POST">
+            <div class="form-group">
+                <label for="stock_id">订单id:</label>
+                <input type="text" id="stock_id" name="stock_id" required>
+            </div>
+            <button type="submit" class="button">提交</button>
+        </form>
+        <a href="{{ url_for('mainPage') }}">点击此处返回主页面</a>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            <ul class="flashes">
+            {% for category, message in messages %}
+              <li class="{{ category }}">{{ message }}</li>
+            {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+    </div>
+</body>
+</html>
